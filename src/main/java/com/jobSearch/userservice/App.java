@@ -1,9 +1,9 @@
 package com.jobSearch.userservice;
 
-import com.jobSearch.userservice.dao.IUserDAO;
 import com.jobSearch.userservice.domain.*;
 import com.jobSearch.userservice.domain.util.EducationLevel;
 import com.jobSearch.userservice.domain.util.Gender;
+import com.jobSearch.userservice.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
@@ -20,7 +20,7 @@ public class App {
     }
 
     @Bean
-    public CommandLineRunner insertData(IUserDAO iUserDAO)
+    public CommandLineRunner insertData(UserRepository iUserDAO)
     {
          return  args->{
              User user1 = new User("John","Doe", Gender.MALE,25);

@@ -72,9 +72,9 @@ public class UserController {
     }
 
     @PostMapping("/users/{uid}/edu/")
-    public void getUserEducationRecord(@PathVariable Long uid,@RequestBody Education education)
+    public Message getUserEducationRecord(@PathVariable Long uid,@RequestBody Education education)
     {
-        service.addUserSingleEducationRecord(uid ,education);
+        return  new Message("User eduction Submitted Successfully ",service.addUserSingleEducationRecord(uid ,education));
     }
 
     @PutMapping("/users/{uid}/edu/{eid}")

@@ -1,7 +1,7 @@
 package com.jobSearch.userservice.service;
 
+import com.jobSearch.userservice.repository.UserRepository;
 import com.jobSearch.userservice.util.UserData;
-import com.jobSearch.userservice.dao.IUserDAO;
 import com.jobSearch.userservice.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import java.util.List;
 public class UserService implements IUserService {
 
     @Autowired
-    private IUserDAO iUserDAO;
+    private UserRepository iUserDAO;
 
 
     @Override
@@ -50,10 +50,11 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void addUserSingleEducationRecord(Long userId ,Education educationRecord) {
+    public List<Education> addUserSingleEducationRecord(Long userId ,Education educationRecord) {
            User user =this.getUser(userId);
            user.setEducation(educationRecord);
            iUserDAO.save(user);
+           return user.getEducation();
     }
 
     @Override

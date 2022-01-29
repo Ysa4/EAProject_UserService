@@ -14,7 +14,7 @@ public interface IUserService {
 
     // education
     public List<Education>  getUserEducationRecord(Long userId);
-    public void addUserSingleEducationRecord(Long userId ,Education educationRecord);
+    public List<Education> addUserSingleEducationRecord(Long userId ,Education educationRecord);
     public Education getUserSingleEducationRecord(Long userId,Long eduRecordId);
     public void updateUserSingleEducationRecord(Long userId,Long eduRecordId,Education educationRecord);
     public void deleteUserSingleEducationRecord(Long userId,Long eduRecordId);

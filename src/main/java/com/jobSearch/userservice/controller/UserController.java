@@ -1,9 +1,7 @@
 package com.jobSearch.userservice.controller;
 
 
-import com.jobSearch.userservice.util.Message;
-import com.jobSearch.userservice.util.MessageStatus;
-import com.jobSearch.userservice.util.UserData;
+import com.jobSearch.userservice.dto.UserData;
 import com.jobSearch.userservice.domain.*;
 import com.jobSearch.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,20 +26,13 @@ public class UserController {
 
     }
 
-    @PostMapping("/users/login")
-    public Long login(@RequestBody Account account)
-    {
 
-        return service.login(account);
-    }
 
     @GetMapping("/users/{id}")
-    public Message getUser(@PathVariable Long id)
+    public User getUser(@PathVariable Long id)
     {
-            User user =service.getUser(id);
-            Message msg =new Message("Success",user);
 
-        return  msg;
+        return  service.getUser(id);
     }
 
     @PutMapping("/users/{id}")
@@ -72,9 +63,9 @@ public class UserController {
     }
 
     @PostMapping("/users/{uid}/edu/")
-    public Message getUserEducationRecord(@PathVariable Long uid,@RequestBody Education education)
+    public List<Education> getUserEducationRecord(@PathVariable Long uid, @RequestBody Education education)
     {
-        return  new Message("User eduction Submitted Successfully ",service.addUserSingleEducationRecord(uid ,education));
+        return service.addUserSingleEducationRecord(uid ,education);
     }
 
     @PutMapping("/users/{uid}/edu/{eid}")

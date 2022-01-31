@@ -1,6 +1,6 @@
 package com.jobSearch.userservice.service;
 
-import com.jobSearch.userservice.util.UserData;
+import com.jobSearch.userservice.dto.UserData;
 import com.jobSearch.userservice.domain.*;
 
 import java.util.List;

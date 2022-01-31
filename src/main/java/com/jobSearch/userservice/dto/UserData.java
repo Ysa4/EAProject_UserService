@@ -1,4 +1,4 @@
-package com.jobSearch.userservice.util;
+package com.jobSearch.userservice.dto;
 
 
 import com.jobSearch.userservice.domain.Account;

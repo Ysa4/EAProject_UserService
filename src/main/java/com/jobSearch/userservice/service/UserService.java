@@ -1,7 +1,7 @@
 package com.jobSearch.userservice.service;
 
 import com.jobSearch.userservice.repository.UserRepository;
-import com.jobSearch.userservice.util.UserData;
+import com.jobSearch.userservice.dto.UserData;
 import com.jobSearch.userservice.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
